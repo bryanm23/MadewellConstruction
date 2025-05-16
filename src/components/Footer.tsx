@@ -9,27 +9,47 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Madewell Construction</h3>
-            <p>Building excellence with precision, passion, and professionalism since 2009.</p>
+            <p>Sussex County's trusted general contractor since 1981. Serving Lafayette, Newton, Sparta, Andover,Sussex, Wantage, and all of northern New Jersey with quality construction services.</p>
+            <div className="footer-social">
+              <a href="https://www.facebook.com/madewellconstruction" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <span className="social-icon">📱</span>
+              </a>
+              <a href="https://www.instagram.com/madewellconstruction" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span className="social-icon">📷</span>
+              </a>
+            </div>
           </div>
           <div className="footer-section">
-            <h3>Quick Links</h3>
+            <h3>Services</h3>
             <ul className="footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Services</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#services">Residential Construction</a></li>
+              <li><a href="#services">Commercial Construction</a></li>
+              <li><a href="#services">Kitchen & Bathroom Remodels</a></li>
+              <li><a href="#services">Additions & Renovations</a></li>
+              <li><a href="#services">Sustainable Building</a></li>
             </ul>
           </div>
           <div className="footer-section">
-            <h3>Contact</h3>
-            <p>123 Construction Ave, City, State 12345</p>
-            <p>(555) 123-4567</p>
-            <p>info@madewellconstruction.com</p>
+            <h3>Contact Us</h3>
+            <address itemScope itemType="http://schema.org/LocalBusiness">
+              <span itemProp="name">Madewell Construction</span>
+              <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+                <p>
+                  <span itemProp="streetAddress">176 Statesville Quarry Road</span><br />
+                  <span itemProp="addressLocality">Lafayette</span>, 
+                  <span itemProp="addressRegion">NJ</span> 
+                  <span itemProp="postalCode">07848</span>
+                </p>
+              </div>
+              <p>Phone: <a href="tel:2019248164" itemProp="telephone">(201) 924-8164</a></p>
+              <p>Email: <a href="mailto:madewellconst@gmail.com" itemProp="email">madewellconst@gmail.com</a></p>
+              <p>License #: 13VH05234700</p>
+            </address>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Madewell Construction. All rights reserved.</p>
+          <p>&copy; {currentYear} Madewell Construction. All rights reserved. | <a href="#" className="footer-policy-link">Privacy Policy</a> | <a href="#" className="footer-policy-link">Terms of Service</a></p>
+          <p className="footer-service-areas">Proudly serving Sussex County and all of northern New Jersey, including Lafayette, Newton, Sparta, Andover, Hamburg, Vernon, and surrounding areas.</p>
         </div>
       </div>
     </footer>
