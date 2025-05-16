@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Madewell Construction - Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #e67e22;
+    }
+    .card {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 4px solid #e67e22;
+    }
+  </style>
+</head>
+<body>
+  <h1>Madewell Construction - Test Page</h1>
+  <div class="card">
+    <p>If you can see this page, static files are being served correctly from GitHub Pages.</p>
+    <p>Current URL: <span id="currentUrl"></span></p>
+    <p>Current timestamp: <span id="timestamp"></span></p>
+  </div>
+  <p>Try visiting the <a href="index.html">main page</a>.</p>
+  
+  <script>
+    document.getElementById('currentUrl').textContent = window.location.href;
+    document.getElementById('timestamp').textContent = new Date().toString();
+    console.log('Page loaded. Check the browser console for any errors.');
+  </script>
+</body>
+</html> 

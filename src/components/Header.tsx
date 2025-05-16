@@ -66,7 +66,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="container header-container">
         <div className="logo">
-          <h1>Madewell Construction</h1>
+          <h1>Madewell Construction LLC</h1>
         </div>
         
         <button 
