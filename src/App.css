@@ -50,6 +50,13 @@
   overflow-x: hidden;
 }
 
+/* Add padding at the top for desktop to accommodate floating header */
+@media (min-width: 992px) {
+  .app {
+    padding-top: 15px;
+  }
+}
+
 main {
   flex: 1;
   width: 100%;

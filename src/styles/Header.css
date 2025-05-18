@@ -9,6 +9,21 @@ header {
   transition: all 0.3s ease;
 }
 
+/* Desktop styles - header not glued to the top */
+@media (min-width: 992px) {
+  header {
+    top: 15px;
+    width: 96%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  
+  header.scrolled {
+    top: 10px;
+  }
+}
+
 header.scrolled {
   padding: 0.8rem 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -146,6 +161,12 @@ nav a.active::after {
 }
 
 @media (max-width: 768px) {
+  header {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  
   .mobile-menu-button {
     display: block;
   }
