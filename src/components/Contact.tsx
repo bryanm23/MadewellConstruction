@@ -63,7 +63,7 @@ const Contact = () => {
                 </div>
                 <div className="contact-text">
                   <h4>Email</h4>
-                  <p><a href="mailto:madewellconst@gmail.com" itemProp="email">madewellconst@gmail.com</a></p>
+                  <p><a href="mailto:tom@madewellconstruction.org" itemProp="email">tom@madewellconstruction.org</a></p>
                 </div>
               </div>
               <div className="contact-detail">
@@ -115,7 +115,7 @@ const Contact = () => {
                   </div>
                   <div className="form-group">
                     <label htmlFor="message">Project Details</label>
-                    <textarea id="message" name="message" rows={5} placeholder="Tell us about your project in Sussex County, NJ" required></textarea>
+                    <textarea id="message" name="message" rows={5} placeholder="Tell us about your project" required></textarea>
                   </div>
                   <button type="submit" className="btn btn-submit">Get a Free Estimate</button>
                 </form>
