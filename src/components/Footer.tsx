@@ -43,7 +43,9 @@ const Footer = () => {
               </div>
               <p>Phone: <a href="tel:2019248164" itemProp="telephone">(201) 924-8164</a></p>
               <p>Email: <a href="mailto:tom@madewellconstruction.org" itemProp="email">tom@madewellconstruction.org</a></p>
+              /**
               <p>License #: 13VH05234700</p>
+              */
             </address>
           </div>
         </div>
