@@ -3,12 +3,13 @@ import '../styles/Projects.css'
 const Projects = () => {
   const projects = [
     {
-      title: "Custom Lake Home in Sparta, NJ",
-      category: "Residential Construction",
+      title: "Entourage Salon, Mount Olive NJ",
+      category: "Commercial Construction",
       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-      description: "A stunning 4,500 sq ft custom-built modern home with floor-to-ceiling windows overlooking Lake Mohawk in Sparta, Sussex County.",
-      location: "Sparta, NJ"
+      description: "A complete renovation done of Entourage Salon in Mount Olive, NJ",
+      location: "Mount Olive, NJ"
     },
+    /*
     {
       title: "Commercial Office Renovation in Newton",
       category: "Commercial Construction",
@@ -30,6 +31,7 @@ const Projects = () => {
       description: "Complete transformation of an outdated kitchen into a chef's dream with custom cabinetry, high-end appliances, and luxury finishes in Andover Township.",
       location: "Andover, NJ"
     }
+      */
   ]
 
   return (
@@ -56,7 +58,7 @@ const Projects = () => {
           ))}
         </div>
         <div className="projects-cta">
-          <p>Ready to start your construction project in Sussex County? Contact Madewell Construction today for a free consultation.</p>
+          <p>Ready to start your construction project? Contact Madewell Construction today for a free consultation.</p>
           <a href="#contact" className="btn">Get a Free Estimate</a>
         </div>
       </div>

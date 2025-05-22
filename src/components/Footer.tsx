@@ -11,11 +11,11 @@ const Footer = () => {
             <h3>Madewell Construction</h3>
             <p>Sussex County's trusted general contractor since 1981. Serving Lafayette, Newton, Sparta, Andover,Sussex, Wantage, and all of northern New Jersey with quality construction services.</p>
             <div className="footer-social">
-              <a href="https://www.facebook.com/madewellconstruction" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <span className="social-icon">📱</span>
+              <a href="https://madewellconstruction.org" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <span className="social-icon"></span>
               </a>
-              <a href="https://www.instagram.com/madewellconstruction" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <span className="social-icon">📷</span>
+              <a href="https://madewellconstruction.org" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span className="social-icon"></span>
               </a>
             </div>
           </div>
