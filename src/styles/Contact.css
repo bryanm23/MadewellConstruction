@@ -1,9 +1,11 @@
 .contact {
   background-color: white;
   width: 100%;
-  padding: 6rem 0;
+  padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .contact::before {
@@ -35,8 +37,9 @@
   gap: 3rem;
   margin-top: 3rem;
   width: 100%;
+  max-width: 1200px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* Contact Info Section */
@@ -50,7 +53,9 @@
   padding: 2.5rem;
   position: relative;
   overflow: hidden;
-  max-width: 450px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .dark-mode .contact-info {
@@ -318,10 +323,15 @@
   .contact-container {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 800px;
   }
   
-  .contact-info,
+  .contact-info {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
   .contact-form-wrapper {
     max-width: 100%;
     width: 100%;
@@ -337,16 +347,21 @@
 }
 
 @media (max-width: 768px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+  
+  .contact-info {
+    padding: 2rem;
+    width: 100%;
+  }
+  
   .form-row {
     flex-direction: column;
     gap: 1.5rem;
   }
   
   .contact-form {
-    padding: 1.5rem;
-  }
-  
-  .contact-info {
     padding: 1.5rem;
   }
   

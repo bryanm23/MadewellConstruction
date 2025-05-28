@@ -1,7 +1,39 @@
 import '../styles/Projects.css'
+import { useNavigate } from 'react-router-dom'
+import wantage1 from '../assets/images/wantage_addition/IMG_9725.jpeg'
+import wantage2 from '../assets/images/wantage_addition/IMG_9727.jpeg'
+import wantage3 from '../assets/images/wantage_addition/IMG_9771.jpeg'
+import wantage4 from '../assets/images/wantage_addition/IMG_9782.jpeg'
+import wantage5 from '../assets/images/wantage_addition/IMG_0018.jpeg'
+import wantage6 from '../assets/images/wantage_addition/IMG_0040.jpeg'
+import franklin1 from '../assets/images/franklin/IMG_7691.jpeg'
+import franklin2 from '../assets/images/franklin/IMG_7705.jpeg'
+import franklin3 from '../assets/images/franklin/IMG_2760.jpeg'
+import franklin4 from '../assets/images/franklin/IMG_2720.jpeg'
 
 const Projects = () => {
+  const navigate = useNavigate()
+
   const projects = [
+    {
+      id: 'wantage-addition',
+      title: "Two-Story Addition in Wantage",
+      category: "Residential Addition",
+      image: wantage1,
+      description: "A beautiful two-story addition project in Wantage, NJ, featuring modern design elements and seamless integration with the existing structure.",
+      location: "Wantage, NJ",
+      gallery: [wantage1, wantage2, wantage3, wantage4, wantage5, wantage6]
+    },
+    {
+      id: 'franklin-renovation',
+      title: "Franklin Home Renovation",
+      category: "Residential Renovation",
+      image: franklin1,
+      description: "A comprehensive exterior renovation project in Franklin, NJ, featuring a new retaining wall, siding replacement, and a complete front porch and stairs redesign.",
+      location: "Franklin, NJ",
+      gallery: [franklin1, franklin2, franklin3, franklin4]
+    },
+    /*
     {
       title: "Entourage Salon, Mount Olive NJ",
       category: "Commercial Construction",
@@ -9,7 +41,6 @@ const Projects = () => {
       description: "A complete renovation done of Entourage Salon in Mount Olive, NJ",
       location: "Mount Olive, NJ"
     },
-    /*
     {
       title: "Commercial Office Renovation in Newton",
       category: "Commercial Construction",
@@ -37,11 +68,18 @@ const Projects = () => {
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <h2 className="section-title">Featured Projects in Sussex County, NJ</h2>
-        <p className="section-description">Browse through our portfolio of completed construction projects throughout Sussex County. From custom homes to commercial buildings, we've helped bring our clients' visions to life across northern New Jersey.</p>
+        <h2 className="section-title">Featured Projects</h2>
+        <p className="section-description">Browse through our portfolio of a select few of our completed construction projects throughout Sussex County. From custom homes to commercial buildings, we've helped bring our clients' visions to life across northern New Jersey.</p>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div className="project-card" key={index} itemScope itemType="http://schema.org/CreativeWork">
+            <div 
+              className="project-card" 
+              key={index} 
+              itemScope 
+              itemType="http://schema.org/CreativeWork"
+              onClick={() => project.id && navigate(`/project/${project.id}`)}
+              style={{ cursor: project.id ? 'pointer' : 'default' }}
+            >
               <div className="project-image" style={{ backgroundImage: `url(${project.image})` }}>
                 <div className="project-overlay">
                   <span className="project-category" itemProp="keywords">{project.category}</span>
@@ -52,7 +90,11 @@ const Projects = () => {
                 <h3 itemProp="name">{project.title}</h3>
                 <p itemProp="description">{project.description}</p>
                 <meta itemProp="creator" content="Madewell Construction" />
-                <a href="#contact" className="project-link">Request Similar Project</a>
+                {project.id ? (
+                  <span className="project-link">View Project Details</span>
+                ) : (
+                  <a href="#contact" className="project-link">Request Similar Project</a>
+                )}
               </div>
             </div>
           ))}

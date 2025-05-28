@@ -35,7 +35,7 @@ const Skills = () => {
   ]
 
   return (
-    <section id="services" className="section skills">
+    <section id="skills" className="section skills">
       <div className="container">
         <h2 className="section-title">Construction Services in Sussex County, NJ</h2>
         <p className="section-description">Madewell Construction provides comprehensive construction services throughout Sussex County and northern New Jersey. Our licensed team delivers quality craftsmanship for both residential and commercial projects.</p>
