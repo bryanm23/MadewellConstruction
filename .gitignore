@@ -1,5 +1,27 @@
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+
+# Misc
 .DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Large image files
+src/assets/images/**/*.jpeg
+src/assets/images/**/*.jpg
+src/assets/images/**/*.png
