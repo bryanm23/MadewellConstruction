@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import '../styles/Hero.css'
 
-// Google Drive image URLs
-const wantage1 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9725.jpeg'
-const wantage2 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9727.jpeg'
-const wantage3 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9771.jpeg'
-const wantage4 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9782.jpeg'
-const wantage5 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_0018.jpeg'
-const wantage6 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_0040.jpeg'
-const franklin1 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_7691.jpeg'
-const franklin2 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_7705.jpeg'
-const franklin3 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_2760.jpeg'
-const franklin4 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_2720.jpeg'
+// Postimg image URLs
+const wantage1 = 'https://i.postimg.cc/dt5Rk1jK/IMG-0018.jpg'
+const wantage2 = 'https://i.postimg.cc/d3B29tMr/IMG-0040.jpg'
+const wantage3 = 'https://i.postimg.cc/2SJ4GKtc/IMG-9725.jpg'
+const wantage4 = 'https://i.postimg.cc/wTqcjJJV/IMG-9727.jpg'
+const wantage5 = 'https://i.postimg.cc/6pTrdXM4/IMG-9771.jpg'
+const wantage6 = 'https://i.postimg.cc/NG7ktbyF/IMG-9782.jpg'
+const franklin1 = 'https://i.postimg.cc/d0k9KYdc/IMG-2720.jpg'
+const franklin2 = 'https://i.postimg.cc/8C2mp0BJ/IMG-2760.jpg'
+const franklin3 = 'https://i.postimg.cc/Fzmbck6h/IMG-7691.jpg'
+const franklin4 = 'https://i.postimg.cc/Hxb4V9BS/IMG-7705.jpg'
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
