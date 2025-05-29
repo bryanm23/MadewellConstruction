@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
 import '../styles/Hero.css'
-const wantage1 = '/images/IMG_0018.jpeg'
-const wantage2 = '/images/IMG_0040.jpeg'
-const wantage3 = '/images/IMG_9725.jpeg'
-const wantage4 = '/images/IMG_9727.jpeg'
-const wantage5 = '/images/IMG_9771.jpeg'
-const wantage6 = '/images/IMG_9782.jpeg'
-const franklin1 = '/images/IMG_2720.jpeg'
-const franklin2 = '/images/IMG_2760.jpeg'
-const franklin3 = '/images/IMG_7691.jpeg'
-const franklin4 = '/images/IMG_7705.jpeg'
+
+// Google Drive image URLs
+const wantage1 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9725.jpeg'
+const wantage2 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9727.jpeg'
+const wantage3 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9771.jpeg'
+const wantage4 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_9782.jpeg'
+const wantage5 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_0018.jpeg'
+const wantage6 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/wantage_addition/IMG_0040.jpeg'
+const franklin1 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_7691.jpeg'
+const franklin2 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_7705.jpeg'
+const franklin3 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_2760.jpeg'
+const franklin4 = 'https://drive.google.com/uc?export=view&id=1rF1CwED_QaskD7F8RcUNQALztP97-jEy/franklin/IMG_2720.jpeg'
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
