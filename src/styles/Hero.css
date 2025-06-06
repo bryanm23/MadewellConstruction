@@ -32,7 +32,7 @@
   background-position: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  transform: scale(1.1); /* Slight zoom effect */
+  transform: scale(1.1);
 }
 
 .hero-background-image.active {
@@ -47,7 +47,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
   z-index: 2;
 }
 
@@ -67,7 +67,12 @@
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero-content h1 {
@@ -75,22 +80,24 @@
   margin-bottom: 1.5rem;
   color: white;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
 }
 
 .hero-content h2 {
   font-size: clamp(1.4rem, 3vw, 2rem);
   margin-bottom: 1.5rem;
   color: var(--primary-color);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
 }
 
 .hero-content p {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  margin-bottom: 2.5rem;
-  color: white;
-  opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-buttons {
@@ -99,6 +106,18 @@
   margin-top: 2rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero-locations {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-locations p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 }
 
 .btn-secondary {
@@ -139,6 +158,10 @@
     padding: 0 1rem;
   }
   
+  .hero-content {
+    padding: 1.5rem;
+  }
+  
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -150,18 +173,24 @@
     width: 100%;
     max-width: 300px;
   }
+  
+  .hero-locations p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 576px) {
-  .hero {
-    min-height: 100vh;
-  }
-  
-  .hero-container {
-    padding: 0 1rem;
-  }
-  
   .hero-content {
-    padding: 0 1rem;
+    padding: 1.2rem;
+  }
+  
+  .hero-locations {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+  }
+  
+  .hero-locations p {
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 } 

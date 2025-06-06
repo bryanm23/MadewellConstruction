@@ -61,7 +61,7 @@ const Hero = () => {
             <a href="#projects" className="btn btn-secondary">View Our Projects</a>
           </div>
           <div className="hero-locations">
-            <p>Proudly serving: Lafayette • Newton • Sparta • Andover • Hamburg • Vernon • Sussex • Wantage</p>
+            <p>Proudly serving: Lafayette • Newton • Sparta • Andover • Hamburg • Vernon • Sussex • Wantage & all of Sussex County, NJ</p>
           </div>
         </div>
       </div>
