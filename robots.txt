@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /lafayette-nj-contractor
+Allow: /sussex-county-general-contractor
+Allow: /services/
+Allow: /areas-served
+Disallow: /debug.html
 
 Sitemap: https://madewellconstruction.org/sitemap.xml 
