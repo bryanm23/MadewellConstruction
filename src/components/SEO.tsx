@@ -7,8 +7,8 @@ interface SEOProps {
 }
 
 const SEO = ({ 
-  title = "Madewell Construction | General Contractor in Sussex County, NJ",
-  description = "Madewell Construction is a trusted general contractor in Sussex County, NJ with over 40 years of experience delivering quality construction services. Expert home renovations, commercial build-outs, and custom projects.",
+  title = "Madewell Construction | General Contractor in Lafayette & Sussex County, NJ",
+  description = "Madewell Construction is your trusted general contractor in Lafayette and Sussex County, NJ. Over 40 years of experience in home renovations, commercial construction, and custom projects. Serving Lafayette, Newton, Sparta, and all of Sussex County.",
   canonical = "https://madewellconstruction.org/"
 }: SEOProps) => {
   return (
@@ -16,6 +16,9 @@ const SEO = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+      
+      {/* Keywords for better SEO */}
+      <meta name="keywords" content="general contractor lafayette nj, construction company sussex county, home renovation lafayette, commercial construction sussex county, contractor near me, custom home builder lafayette nj, remodeling services sussex county, construction company near me, lafayette nj contractor, sussex county builder" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -36,7 +39,7 @@ const SEO = ({
         {`
           {
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
+            "@type": "GeneralContractor",
             "name": "Madewell Construction",
             "image": "https://madewellconstruction.org/logo.png",
             "url": "https://madewellconstruction.org",
@@ -54,6 +57,15 @@ const SEO = ({
               "latitude": 41.1018,
               "longitude": -74.6936
             },
+            "areaServed": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.1018,
+                "longitude": -74.6936
+              },
+              "geoRadius": "30000"
+            },
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
               "dayOfWeek": [
@@ -66,7 +78,42 @@ const SEO = ({
               "opens": "08:00",
               "closes": "16:00"
             },
-            "priceRange": "$$"
+            "priceRange": "$$",
+            "servesCuisine": "Construction Services",
+            "sameAs": [
+              "https://www.facebook.com/madewellconstruction",
+              "https://www.instagram.com/madewellconstruction"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Construction Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Home Renovation",
+                    "description": "Complete home renovation services in Lafayette and Sussex County"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Commercial Construction",
+                    "description": "Commercial construction and renovation in Sussex County"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Custom Home Building",
+                    "description": "Custom home construction in Lafayette and surrounding areas"
+                  }
+                }
+              ]
+            }
           }
         `}
       </script>
