@@ -120,12 +120,12 @@ const ProjectDetail = () => {
           </div>
         </div>
 
-        {project.hasBeforeAfter && project.beforeImages ? (
+        {project.hasBeforeAfter && 'beforeImages' in project && project.beforeImages ? (
           <div className="project-before-after">
             <div className="before-section">
               <h2>Before</h2>
               <div className="before-after-grid">
-                {project.beforeImages.map((beforeImg, index) => (
+                {project.beforeImages.map((beforeImg: string, index: number) => (
                   <div key={index} className="before-after-item">
                     <div 
                       className="before-after-image"
@@ -138,14 +138,14 @@ const ProjectDetail = () => {
             <div className="after-section">
               <h2>After</h2>
               <div className="before-after-grid">
-                {project.afterImages && project.afterImages.filter(img => img && !img.includes('...')).map((afterImg, index) => (
+                {'afterImages' in project && project.afterImages ? project.afterImages.filter((img: string) => img && !img.includes('...')).map((afterImg: string, index: number) => (
                   <div key={index} className="before-after-item">
                     <div 
                       className="before-after-image"
                       style={{ backgroundImage: `url(${afterImg})` }}
                     />
                   </div>
-                ))}
+                )) : null}
               </div>
             </div>
             <div className="project-gallery">
@@ -157,7 +157,7 @@ const ProjectDetail = () => {
                       src={image} 
                       alt={`${project.title} - Image ${index + 1}`}
                       loading="eager"
-                      fetchpriority="high"
+                      fetchPriority="high"
                       decoding="async"
                     />
                   </div>
@@ -173,7 +173,7 @@ const ProjectDetail = () => {
                   src={image} 
                   alt={`${project.title} - Image ${index + 1}`}
                   loading="eager"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   decoding="async"
                 />
               </div>
