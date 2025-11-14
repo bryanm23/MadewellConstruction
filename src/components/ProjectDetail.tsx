@@ -14,6 +14,15 @@ const franklin2 = 'https://i.postimg.cc/8C2mp0BJ/IMG-2760.jpg'
 const franklin3 = 'https://i.postimg.cc/Fzmbck6h/IMG-7691.jpg'
 const franklin4 = 'https://i.postimg.cc/Hxb4V9BS/IMG-7705.jpg'
 
+// Black Dog Bookstore images
+const blackDogBefore1 = 'https://i.postimg.cc/8CJQ7JD4/IMG-7740.jpg'
+const blackDogBefore2 = 'https://i.postimg.cc/N09qK9YT/IMG-7741.jpg'
+const blackDogBefore3 = 'https://i.postimg.cc/25bR1bmx/IMG-7742.jpg'
+const blackDogAfter1 = 'https://i.postimg.cc/sxBZ8JRZ/IMG-7743.jpg'
+const blackDogAfter2 = 'https://i.postimg.cc/SRXz5GpM/IMG-7744.jpg'
+const blackDogAfter3 = 'https://i.postimg.cc/GtBsNj1T/IMG-7745.jpg'
+const blackDogAfter4 = 'https://i.postimg.cc/C5Zft4VR/IMG-7746.jpg'
+
 const ProjectDetail = () => {
   const navigate = useNavigate()
   const { projectId } = useParams()
@@ -27,6 +36,25 @@ const ProjectDetail = () => {
   }
 
   const projects = {
+    'black-dog-bookstore': {
+      id: 'black-dog-bookstore',
+      title: "Black Dog Bookstore Renovation",
+      category: "Commercial Renovation",
+      description: "A complete renovation of the Black Dog Bookstore, transforming the space into a modern, welcoming environment while preserving its charming character. This project showcases our expertise in commercial renovations with attention to detail and quality craftsmanship.",
+      location: "Sussex County, NJ",
+      beforeImages: [blackDogBefore1, blackDogBefore2, blackDogBefore3],
+      afterImages: [blackDogAfter1, blackDogAfter2, blackDogAfter3],
+      gallery: [blackDogBefore1, blackDogBefore2, blackDogBefore3, blackDogAfter1, blackDogAfter2, blackDogAfter3, blackDogAfter4],
+      details: [
+        "Complete interior renovation",
+        "Modern design with preserved character",
+        "Quality craftsmanship throughout",
+        "Commercial space transformation",
+        "Attention to detail",
+        "Welcoming environment"
+      ],
+      hasBeforeAfter: true
+    },
     'wantage-addition': {
       id: 'wantage-addition',
       title: "Two-Story Addition in Wantage",
@@ -39,7 +67,8 @@ const ProjectDetail = () => {
         "Seamless integration with existing structure",
         "Custom architectural details",
         "High-quality materials and finishes"
-      ]
+      ],
+      hasBeforeAfter: false
     },
     'franklin-renovation': {
       id: 'franklin-renovation',
@@ -55,7 +84,8 @@ const ProjectDetail = () => {
         "New staircase design and installation",
         "Exterior finishing touches",
         "Improved curb appeal"
-      ]
+      ],
+      hasBeforeAfter: false
     }
   }
 
@@ -90,13 +120,66 @@ const ProjectDetail = () => {
           </div>
         </div>
 
-        <div className="project-gallery">
-          {project.gallery.map((image, index) => (
-            <div key={index} className="gallery-item">
-              <img src={image} alt={`${project.title} - Image ${index + 1}`} />
+        {project.hasBeforeAfter && project.beforeImages ? (
+          <div className="project-before-after">
+            <div className="before-section">
+              <h2>Before</h2>
+              <div className="before-after-grid">
+                {project.beforeImages.map((beforeImg, index) => (
+                  <div key={index} className="before-after-item">
+                    <div 
+                      className="before-after-image"
+                      style={{ backgroundImage: `url(${beforeImg})` }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+            <div className="after-section">
+              <h2>After</h2>
+              <div className="before-after-grid">
+                {project.afterImages && project.afterImages.filter(img => img && !img.includes('...')).map((afterImg, index) => (
+                  <div key={index} className="before-after-item">
+                    <div 
+                      className="before-after-image"
+                      style={{ backgroundImage: `url(${afterImg})` }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="project-gallery">
+              <h2>Project Gallery</h2>
+              <div className="gallery-grid">
+                {project.gallery.filter(img => img && !img.includes('...')).map((image, index) => (
+                  <div key={index} className="gallery-item">
+                    <img 
+                      src={image} 
+                      alt={`${project.title} - Image ${index + 1}`}
+                      loading="eager"
+                      fetchpriority="high"
+                      decoding="async"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="project-gallery">
+            {project.gallery.map((image, index) => (
+              <div key={index} className="gallery-item">
+                <img 
+                  src={image} 
+                  alt={`${project.title} - Image ${index + 1}`}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="project-content">
           <div className="project-description">

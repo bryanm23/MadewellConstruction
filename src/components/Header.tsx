@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../styles/Header.css'
 
-interface HeaderProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [scrolled, setScrolled] = useState(false)
@@ -86,15 +81,6 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
             <li><a href="#skills" onClick={() => setMenuOpen(false)} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
             <li><a href="#projects" onClick={() => setMenuOpen(false)} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
             <li><a href="#contact" onClick={() => setMenuOpen(false)} className={activeSection === 'contact' ? 'active' : ''}>Contact</a></li>
-            <li>
-              <button 
-                className="theme-toggle" 
-                onClick={toggleDarkMode}
-                aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-              >
-                {darkMode ? '☀️' : '🌙'}
-              </button>
-            </li>
           </ul>
         </nav>
       </div>

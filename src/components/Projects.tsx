@@ -1,7 +1,7 @@
 import '../styles/Projects.css'
 import { useNavigate } from 'react-router-dom'
 
-// Google Drive image URLs
+// Image URLs - hosted on Postimg (i.postimg.cc)
 const wantage1 = 'https://i.postimg.cc/dt5Rk1jK/IMG-0018.jpg'
 const wantage2 = 'https://i.postimg.cc/d3B29tMr/IMG-0040.jpg'
 const wantage3 = 'https://i.postimg.cc/2SJ4GKtc/IMG-9725.jpg'
@@ -13,10 +13,32 @@ const franklin2 = 'https://i.postimg.cc/8C2mp0BJ/IMG-2760.jpg'
 const franklin3 = 'https://i.postimg.cc/Fzmbck6h/IMG-7691.jpg'
 const franklin4 = 'https://i.postimg.cc/Hxb4V9BS/IMG-7705.jpg'
 
+// Black Dog Bookstore images - Before/After
+// Note: If images appear low quality, the originals may need to be re-uploaded to Postimg at higher resolution
+const blackDogBefore1 = 'https://i.postimg.cc/8CJQ7JD4/IMG-7740.jpg'
+const blackDogBefore2 = 'https://i.postimg.cc/N09qK9YT/IMG-7741.jpg'
+const blackDogBefore3 = 'https://i.postimg.cc/25bR1bmx/IMG-7742.jpg'
+const blackDogAfter1 = 'https://i.postimg.cc/sxBZ8JRZ/IMG-7743.jpg'
+const blackDogAfter2 = 'https://i.postimg.cc/SRXz5GpM/IMG-7744.jpg'
+const blackDogAfter3 = 'https://i.postimg.cc/GtBsNj1T/IMG-7745.jpg'
+const blackDogAfter4 = 'https://i.postimg.cc/C5Zft4VR/IMG-7746.jpg'
+
 const Projects = () => {
   const navigate = useNavigate()
 
   const projects = [
+    {
+      id: 'black-dog-bookstore',
+      title: "Black Dog Bookstore Renovation",
+      category: "Commercial Renovation",
+      image: blackDogAfter1,
+      description: "A complete renovation of the Black Dog Bookstore, transforming the space into a modern, welcoming environment while preserving its charming character. This project showcases our expertise in commercial renovations with attention to detail and quality craftsmanship.",
+      location: "Sussex County, NJ",
+      beforeImages: [blackDogBefore1, blackDogBefore2, blackDogBefore3],
+      afterImages: [blackDogAfter1, blackDogAfter2, blackDogAfter3],
+      gallery: [blackDogBefore1, blackDogBefore2, blackDogBefore3, blackDogAfter1, blackDogAfter2, blackDogAfter3, blackDogAfter4],
+      featured: true
+    },
     {
       id: 'wantage-addition',
       title: "Two-Story Addition in Wantage",
@@ -67,44 +89,79 @@ const Projects = () => {
       */
   ]
 
+  const featuredProject = projects.find(p => p.featured)
+  const otherProjects = projects.filter(p => !p.featured)
+
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">Recent Notable Projects</h2>
         <p className="section-description">Browse through our portfolio of a select few of our completed construction projects throughout Sussex County. From custom homes to commercial buildings, we've helped bring our clients' visions to life across northern New Jersey.</p>
-        <div className="projects-grid">
-          {projects.map((project, index) => (
+        
+        {featuredProject && (
+          <div className="featured-project-wrapper">
             <div 
-              className="project-card" 
-              key={index} 
+              className="featured-project-card" 
               itemScope 
               itemType="http://schema.org/CreativeWork"
-              onClick={() => project.id && navigate(`/project/${project.id}`)}
-              style={{ cursor: project.id ? 'pointer' : 'default' }}
+              onClick={() => featuredProject.id && navigate(`/project/${featuredProject.id}`)}
+              style={{ cursor: featuredProject.id ? 'pointer' : 'default' }}
             >
-              <div className="project-image" style={{ backgroundImage: `url(${project.image})` }}>
-                <div className="project-overlay">
-                  <span className="project-category" itemProp="keywords">{project.category}</span>
-                  <span className="project-location" itemProp="contentLocation">{project.location}</span>
+              <div className="featured-project-image" style={{ backgroundImage: `url(${featuredProject.image})` }}>
+                <div className="featured-project-overlay">
+                  <div className="featured-badge">Featured Project</div>
+                  <span className="project-category" itemProp="keywords">{featuredProject.category}</span>
+                  <span className="project-location" itemProp="contentLocation">{featuredProject.location}</span>
                 </div>
               </div>
-              <div className="project-info">
-                <h3 itemProp="name">{project.title}</h3>
-                <p itemProp="description">{project.description}</p>
+              <div className="featured-project-info">
+                <h3 itemProp="name">{featuredProject.title}</h3>
+                <p itemProp="description">{featuredProject.description}</p>
                 <meta itemProp="creator" content="Madewell Construction" />
-                {project.id ? (
-                  <span className="project-link">View Project Details</span>
+                {featuredProject.id ? (
+                  <span className="project-link">View Project Details →</span>
                 ) : (
                   <a href="#contact" className="project-link">Request Similar Project</a>
                 )}
               </div>
             </div>
-          ))}
-        </div>
-        <div className="projects-cta">
-          <p>Ready to start your construction project? Contact Madewell Construction today for a free consultation.</p>
-          <a href="#contact" className="btn">Get a Free Estimate</a>
-        </div>
+          </div>
+        )}
+
+        {otherProjects.length > 0 && (
+          <>
+            <h3 className="other-projects-title">More Projects</h3>
+            <div className="projects-grid">
+              {otherProjects.map((project, index) => (
+                <div 
+                  className="project-card" 
+                  key={index} 
+                  itemScope 
+                  itemType="http://schema.org/CreativeWork"
+                  onClick={() => project.id && navigate(`/project/${project.id}`)}
+                  style={{ cursor: project.id ? 'pointer' : 'default' }}
+                >
+                  <div className="project-image" style={{ backgroundImage: `url(${project.image})` }}>
+                    <div className="project-overlay">
+                      <span className="project-category" itemProp="keywords">{project.category}</span>
+                      <span className="project-location" itemProp="contentLocation">{project.location}</span>
+                    </div>
+                  </div>
+                  <div className="project-info">
+                    <h3 itemProp="name">{project.title}</h3>
+                    <p itemProp="description">{project.description}</p>
+                    <meta itemProp="creator" content="Madewell Construction" />
+                    {project.id ? (
+                      <span className="project-link">View Project Details</span>
+                    ) : (
+                      <a href="#contact" className="project-link">Request Similar Project</a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   )

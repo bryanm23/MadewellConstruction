@@ -50,10 +50,6 @@ const Skills = () => {
             </div>
           ))}
         </div>
-        <div className="service-cta">
-          <p>Looking for a specific construction service in Sussex County? Contact us today for a free consultation and estimate.</p>
-          <a href="#contact" className="btn">Request a Free Estimate</a>
-        </div>
       </div>
     </section>
   )

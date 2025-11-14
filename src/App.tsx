@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -12,13 +11,11 @@ import ProjectDetail from './components/ProjectDetail'
 import './App.css'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
-
   return (
     <Router>
-      <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+      <div className="app">
         <SEO />
-        <Header darkMode={darkMode} toggleDarkMode={() => setDarkMode(!darkMode)} />
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={
